@@ -1,0 +1,25 @@
+{%extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1 style="color:{{color1}}; background-color:pink">
+
+    this is studs about qw 
+    hello  </h1>
+  <form action="../info">
+    <div style="width:400px; margin:0px auto; height: 300px; background-color: red;">
+          <h1> id: <input type='text' name="id"> <br> <br>
+
+               pass : <input type='password' name="pass"> <br>
+               <input type='submit'>  </h1>>
+      </div>
+      
+  </form>
+<img src="{% static 'images/sea-of-clouds-beautiful-view-43-1920x1080.jpg' %}"/>
+<h2 style='color:{{color2}}'>
+    hellooo
+</h2>
+<h3 style='color:{{color3}}'>
+    students
+</h3>
+    {% endblock %}

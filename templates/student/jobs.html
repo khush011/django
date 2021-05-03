@@ -1,0 +1,45 @@
+{%extends "base.html" %}
+{% load static %}
+{% block content %}
+<div style="height: 20cm;">
+
+    <div style="padding: 2cm;background-color:rgba(51, 71, 109, 0.63); float:left; width:40%;height:20cm;border:thin solid white " >
+        
+        <form method="POST" class="form-control" style="border:thick solid rgb(235, 235, 235);background-color:rgba(156, 124, 48, 0.863); padding:15px " >
+            {% csrf_token %}
+           
+        <h2><b>SElect Type OF joB yoU waNT:</b><br>
+        <select name="job_name">
+            {% for i in job_list %}
+            <option >{{i}} </option> <br><br><br>
+            {% endfor %}
+        </select><br><br>
+        <b>LoCation:</b>  <br>
+        <select name="job_loc">
+            {% for i in loc_list %}
+            <option >{{i}} </option>
+            {% endfor %} 
+        </select></h2><br>
+        <h3><input type="submit" value="GET JOBS"></h3>
+        </form>
+    </div>
+
+        <div style="padding: 2cm;background-color:rgba(97, 40, 144, 0.685); float:right; width:60%;height:20cm; border:thin solid white">
+            {% if request.method == "POST" %}
+                {% for i in pref %} 
+                <button type="submit" style="background: rgba(30, 105, 74, 0.472);border:thin solid white;text-align:left;padding:0.5cm">
+                                        <h1 style="font-family:Courier New;"><b>{{i.name}}</b></h1>
+                                         <h2>Company :{{i.company}}</h2> 
+                                         <h3>Location :{{i.location}}</h3>  
+                                         <h4>Rs.{{i.salary}}</h4>           
+                                         <span style="color: white;">{{i.description}}</span>
+                                        </button>
+
+                {% endfor %}
+            {% endif %}
+        </div>
+        
+</div>
+
+
+{% endblock %}

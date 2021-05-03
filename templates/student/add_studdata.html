@@ -1,0 +1,45 @@
+{%extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div style="padding: 1cm; background-color:burlywood;">
+    <form method="POST">
+        {% csrf_token %}
+
+
+        <div class="form-group">
+            <label >Name :</label>
+            <input type="text" class="form-control" placeholder="Enter your name" name="name">
+          </div>
+
+          <div class="form-group">
+            <label>Roll number:</label>
+            <input type="number" class="form-control" placeholder="Enter your roll number" name="roll_number">
+          </div>
+
+
+    <div style="height:5cm;">
+        Subject
+    <select name="sub">
+    {% for i in obj_sub %}
+        <option >
+                    {{i.subject}}
+        </option>
+    {% endfor %}
+    </select>
+     <br> <br> Teacher
+    <select name="teach" >
+        <br><br>
+    {% for i in obj_teacher %}
+        <option >
+                    {{i.name}}
+        </option>
+    {% endfor %}
+    </select>
+    <br><br>
+    <input class='btn btn-dark' type="submit" value="Add Record">
+    </div>
+
+    </form></div>
+<h3 style='color:green;background-color: burlywood;padding-left: 20px;'> <b>{{m}}</b> </h3>
+{% endblock %}

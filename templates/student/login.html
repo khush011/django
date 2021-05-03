@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- <div style="background-color: rgb(88, 50, 0);">
+
+    <div class="form-group" style="margin:0px auto; width:fit-content ; height: 900px; background-color: rgba(255, 255, 255, 0.747); padding:2cm">
+    <form method="POST">
+        {% csrf_token %}
+        <h1 style="color: rgb(255, 115, 0);"><b>PERSONAL DETAILS</b></h1><br>
+  <h3>      <b> FIRST NAME</b>    : <input type="text" name="name" placeholder="enter name"><br><br>
+
+       <b>PASSWORD</b> : <input type="password" name="pass"> <br> <br>
+
+        <b>EMAIL ID</b> : <input type="text" name="eid" <br><br><br>
+
+       <b>GENDER</b>   : <input type="radio" name="gender" value="male"> MALE <input type="radio" name="gender" value="female">FEMALE <br><br>
+
+       <b>CONTACT</b>  : <input type="number" name="mob"> <br><br>
+
+        <!-- <h1 style="color: rgb(255, 127, 80);"><b>EDUCATIONAL INFORMATION</b></h1> <br>
+                <b> Engineering</b>: <select name="eng" id="eng">
+                    <option selected>-- Select Group ></option>
+                    <option>CSE</option>
+                    <option>ECE</option>
+                    <option>CIVIL</option>
+                    <option>ECE</option>
+                  </select><br><br> <br> <br>
+      <b> HOBBIES</b> : <input type="radio" name="hobbies" value="playing">playing <input type="radio" name="hobbies" value='reading'>reading -->
+        <!-- <br><br><input type="submit">
+  </h3>
+    </form>
+ {{i}} <br> {{j}} <br> {{k}} <br> {{l}} <br> {{m}} <br> {{n}}
+    </div>
+</div>  -->
+
+<div class="container" style="padding-top: 50px;">
+    <h2>Sign Up form</h2>
+    <form method="POST"">
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="email">Username:</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter Username" name="username">
+    </div>
+    <div class="form-group">
+        <label for="email">First Name:</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter first name" name="first_name">
+    </div>
+    <div class="form-group">
+        <label for="email">Last Name:</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter last name" name="last_name">
+    </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Confirm Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Confirm password" name="pwd1">
+      </div>
+      <button type="submit" class="btn btn-dark"> Sign up!  </button> 
+    </form>
+    <br>
+  </div>
+{% for message in messages %}
+ <center><h3 style="padding-left: 10px;color: red;">{{message}}</h3></center> 
+  {% endfor %}
+
+{% endblock %}
